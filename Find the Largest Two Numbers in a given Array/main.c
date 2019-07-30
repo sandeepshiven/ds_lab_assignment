@@ -1,52 +1,47 @@
+
 #include"stdio.h"
 
-void sort(int *,int);
 
+void find_pair(int * ,int,int* );
 void main()
 {
-    int size,i,j,k;
-    printf("Enter size of array\n");
+    int i,j,size,pair[2];
+    printf("Enter the size of array\n");
     scanf("%d",&size);
     int arr[size];
     printf("Enter the elements of array\n");
-    for (i=0;i<size;i++)
+    for(i=0;i<size;i++)
     {
+        fflush(stdin);
         scanf("%d",&arr[i]);
     }
-    sort(arr,size);
-    for(i =0;i<size-1;i++)
-    {
-        for(k = i+1;k<size;k++)
-        {
+    find_pair(arr,size,pair);
 
-        if(arr[i]==arr[i+1])
-        {
-            for(j=i+1;j<size-1;j++)
-                arr[j]=arr[j+1];
-
-        }
-        }
-    }
-    printf("The largest number is:%d\nThe second largest number is:%d",arr[0],arr[1]);
-
+    printf("The largest numbers are %d",arr[pair[0]],arr[pair[1]]);
 }
 
-void sort(int *ptr,int size)
+
+
+
+void find_pair(int arr[],int size,int pair[])
 {
-    int i,temp,j;
-
-    for(i = 0;i<size;i++)
+    int i,j,num1,num2,sum1,sum2,index[2];
+    sum2 = arr[0]+arr[2];
+    num1 = 0;
+    num2 = 1;
+    for(i=0;i<size;i++)
     {
-        for(j = i+1;j<size;j++)
+        for(j = i+1;j<size-1;j++)
         {
-            if (*(ptr+j) > *(ptr + i))
+            sum1 = arr[i] + arr[j+1];
+            if(sum1>sum2)
             {
-                temp = *(ptr+i);
-                *(ptr + i) = *(ptr +j);
-                *(ptr +j) = temp;
-
+                num1 = i;
+                num2 = j;
+                sum2 = sum1;
             }
         }
     }
+    pair[0] = num1;
+    pair[1] = num2+1;
 }
-
