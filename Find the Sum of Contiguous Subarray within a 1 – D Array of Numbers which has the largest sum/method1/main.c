@@ -13,6 +13,8 @@ void main()
         fflush(stdin);
         scanf("%d",&arr[i]);
     }
+    printf("second largest %d",second_largest(arr,size));
+    /*
     if(largest(arr,size)< second_largest(arr,size))
     {
 
@@ -31,6 +33,7 @@ void main()
     printf("The subarray is from %d to %d and sum of elements between these numbers is: %d",arr[second_largest(arr,size)],arr[largest(arr,size)],sum);
 
     }
+    */
 }
 
 
@@ -52,30 +55,23 @@ int largest(int arr[],int size)
 
 int second_largest(int arr[],int size)
 {
-    int i,temp1,k=0,j=0;
+    int i,temp1,k=0,j=0,l,max;
     temp1 = arr[0];
-    for(i = 0; i<size;i++)
+    max = largest(arr,size);
+    for (i = 0;i<size;i++)
     {
-        if (temp1 == arr[largest(arr,size)])
+        if(temp1 == arr[max])
         {
-            k = j;
-
             temp1 = arr[i+1];
-            i++;
-
+            continue;
         }
-        if (temp1 < arr[i])
+        if(temp1 < arr[i])
         {
+            j=k;
+            k=i;
             temp1 = arr[i];
-            j = k;
-            k = i;
         }
-
     }
-    if (arr[j]<arr[k])
-        {
-            j =k;
-        }
     return j;
 
 }
