@@ -62,16 +62,17 @@ int second_largest(int arr[],int size)
     {
         if(temp1 == arr[max])
         {
-            temp1 = arr[i+1];
-            continue;
+            temp1 = arr[i-2];
+           // continue;
         }
         if(temp1 < arr[i])
         {
-            j=k;
+
             k=i;
             temp1 = arr[i];
         }
+        printf("temp1 = %d, k = %d,i = %d\n",temp1,k,i);
     }
-    return j;
+    return k;
 
 }
