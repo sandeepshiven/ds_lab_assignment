@@ -29,8 +29,13 @@ void sort(int *ptr, int size)
               {
                   if(*(ptr+j)<*(ptr+i))
                     {
-                        temp = *(ptr +j);
-                        (
+                        temp = *(ptr +i);
+                        *(ptr +i) =*(ptr +j);
+                        *(ptr + j) = temp;
+                    }
+              }
+        }
+  }
 
       
 
