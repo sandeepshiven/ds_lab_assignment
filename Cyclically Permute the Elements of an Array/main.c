@@ -11,4 +11,15 @@ void main()
     {
         scanf("%d",&arr[i]);
     }
+    arr[size] = arr[0];
+    for(i =0;i < size; i ++)
+    {
+        arr[i] = arr[i +1];
+    }
+
+    printf ("Cyclical permuted array is\n");
+    for(i= 0; i < size;i++)
+    {
+         printf("%d ",arr[i]);
+    {
 }
