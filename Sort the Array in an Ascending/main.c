@@ -35,6 +35,10 @@ void sort(int *ptr, int size)
                     }
               }
         }
+      for(i = 0;i<size;i ++)
+        {
+            printf("%d ",*(ptr+i));
+        }
   }
 
       
