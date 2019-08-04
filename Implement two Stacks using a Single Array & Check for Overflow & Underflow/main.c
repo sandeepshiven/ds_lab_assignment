@@ -60,7 +60,7 @@ void stack_a(int arr[],int max)
             case 2:
                 {
                     item = pop(arr,max,stack);
-                    printf("The top item of stack A is %d\n",item);
+                    printf("The popped item of stack A is %d\n",item);
                     break;
                 }
 
@@ -98,7 +98,7 @@ void stack_b(int arr[],int max)
             case 2:
                 {
                     item = pop(arr,max,stack);
-                    printf("The top item of stack B is %d\n",item);
+                    printf("The popped item of stack B is %d\n",item);
                     break;
                 }
 
