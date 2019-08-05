@@ -23,8 +23,8 @@ void main()
     {
         scanf("%d",&second_array[i]);
     }
-    merge(first_array,second_array,merged,size1,size2);
-    sort(merged,(size1+size2));
+    merge(first_array,second_array,merged,size1,size2); // this function copies the first and second array in larger third array
+    sort(merged,(size1+size2)); // selection sort
     printf("The merged and sorted array is\n");
     for(i=0;i<(size1+size2);i++)
         printf("%d ",merged[i]);

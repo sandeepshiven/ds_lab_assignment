@@ -16,10 +16,10 @@ void main()
     {
         scanf("%d",&arr[i]);
     }
-    sort(arr,size);
+    sort(arr,size); // sorting array using bubble sort algorithm
     printf("\nEnter the value you want to search\n");
     scanf("%d",&element);
-    index = binary_search(arr,element,0,size-1);
+    index = binary_search(arr,element,0,size-1); // index of the element
     printf("The element %d is at index %d",element,index);
 }
 
@@ -52,28 +52,28 @@ void sort(int *ptr,int size)
     print(ptr,size);
 }
 
-int binary_search(int arr[],int element,int lower,int upper)
+int binary_search(int arr[],int element,int lower,int upper) // lower and upper are extremities and changes with every function call
 {
     int mid,i,index;
 
-    mid = (lower+upper+1)/2;
+    mid = (lower+upper+1)/2;  // calculating the middle of the array with each function call
     if(upper >= lower)
     {
 
-        if( arr[mid]== element)
+        if( arr[mid]== element) // if the element is found then return its index
         {
             return mid;
         }
         else if (arr[mid] > element)
         {
-            return binary_search(arr,element,lower,mid-1);
+            return binary_search(arr,element,lower,mid-1); // if the mid element is bigger than search element then search to left of array
         }
         else if (arr[mid] < element)
         {
-            return binary_search(arr,element,mid+1,upper);
+            return binary_search(arr,element,mid+1,upper);  // if the mid element is smaller than search element then search to right of array
         }
     }
-    return -1;
+    return -1;  // if search element is not in array
 
 
 

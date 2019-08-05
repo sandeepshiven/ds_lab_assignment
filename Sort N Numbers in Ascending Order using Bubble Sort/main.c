@@ -20,7 +20,7 @@ void main()
   }
 
 
-void sort(int arr[],int size)
+void sort(int arr[],int size)  // bubble sort compares two adjacent elements at a time and swaps if not in right order
 {
     int i,j,temp;
     for(i=0;i<size-1;i++)
