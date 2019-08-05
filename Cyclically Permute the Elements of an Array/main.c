@@ -11,8 +11,8 @@ void main()
     {
         scanf("%d",&arr[i]);
     }
-    arr[size] = arr[0];
-    for(i =0;i < size; i ++)
+    arr[size] = arr[0]; // arr[size] is not a contagious memory of array it is just a variable which is at random location
+    for(i =0;i < size; i ++) // copying first element to the last and shifting all other elements
     {
         arr[i] = arr[i +1];
     }
