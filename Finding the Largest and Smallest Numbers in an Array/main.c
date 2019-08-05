@@ -13,7 +13,7 @@ void main()
     {
         scanf("%d",&arr[i]);
     }
-    sort(arr,size);
+    sort(arr,size); // sorting using selection sort
     printf("The largest number is:%d\nThe smallest number is:%d",arr[0],arr[size-1]);
 
 }

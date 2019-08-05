@@ -29,7 +29,7 @@ void find_pair(int arr[],int size,int pair[])
     sum2 = arr[0]+arr[2]; // storing initially a sum of the two elements for comparing
     num1 = 0;
     num2 = 1;
-    for(i=0;i<size;i++)// two loops for
+    for(i=0;i<size;i++)// two loops for scanning and comparing two index values
     {
         for(j = i+1;j<size-1;j++)
         {
