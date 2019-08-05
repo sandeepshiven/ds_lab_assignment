@@ -13,29 +13,29 @@ void main()
         scanf("%d",&arr[i]);
     }
     num = arr[0];
-    index = biggest(arr,1,size,0,num);//(0(1) = lower,0(2) = index)
-    printf("The biggest number is %d",arr[index]);
+    index = biggest(arr,1,size,0,num);// 1 is showing the the next index of the the array for comparing the value in num and 0 is index of
+    printf("The biggest number is %d",arr[index]);  // initial element of in num
 }
 
 
 int biggest(int arr[],int lower,int size,int index,int num)
 {
-    if(lower<size)
+    if(lower<size)  // if lower index is less than size of the array
     {
-        if (num<arr[lower])
+        if (num<arr[lower])   // storing the next big number in num after comparison
         {
             index = lower;
             num = arr[lower];
-            return biggest(arr,lower+1,size,index,num);
+            return biggest(arr,lower+1,size,index,num); // recursive call (increased the lower value for next comparison)
         }
         else
         {
-            return biggest(arr,lower+1,size,index,num);
+            return biggest(arr,lower+1,size,index,num); // the num is already bigger so no need of storing (increased lower for next comparison
         }
 
     }
     else
     {
-        return index;
+        return index; // the index of biggest number after comparing every element of the array
     }
 }
