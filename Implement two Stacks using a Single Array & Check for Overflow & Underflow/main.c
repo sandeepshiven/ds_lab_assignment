@@ -21,7 +21,7 @@ void main()
     printf("Enter the size of the array in which stack A and B are being stored\n");
     scanf("%d",&max);
     int arr[max];
-    top_index_b = max;
+    top_index_b = max;  // global variable top_index_b
     while(1)
     {
 
@@ -29,8 +29,8 @@ void main()
     scanf("%d",&choice_of_stack);
     switch(choice_of_stack)
     {
-        case 1: stack_a(arr,max);break;
-        case 2: stack_b(arr,max);break;
+        case 1: stack_a(arr,max);break;  // stack a call
+        case 2: stack_b(arr,max);break;   // stack b call
         default:printf("Invalid selection\n");
 
     }
@@ -52,14 +52,14 @@ void stack_a(int arr[],int max)
             case 1:
                 {
 
-                    item = push(arr,max,stack);
+                    item = push(arr,max,stack);  // push function adding items in the stack
                     printf("The top item of stack A is %d\n",item);
                     break;
                 }
 
             case 2:
                 {
-                    item = pop(arr,max,stack);
+                    item = pop(arr,max,stack);  // pop function removing top item from stack
                     printf("The popped item of stack A is %d\n",item);
                     break;
                 }
@@ -120,9 +120,9 @@ void stack_b(int arr[],int max)
 int push(int arr[],int max,int stack)
 {
     int item;
-    if (stack == 1)
+    if (stack == 1)  // checking the stack a or b
     {
-        if(top_index_a + (max-top_index_b)>=max-1)
+        if(top_index_a + (max-top_index_b)>=max-1)  // checking the condition if array containing stacks is full or not
         {
             printf("Stack Overflow\n");
             return -1;
@@ -131,7 +131,7 @@ int push(int arr[],int max,int stack)
         {
             printf("Enter the item you want to insert\n");
             scanf("%d",&item);
-            top_index_a++;
+            top_index_a++;    // incrementing the index of stack a
             arr[top_index_a] = item;
             return item;
         }
@@ -147,7 +147,7 @@ int push(int arr[],int max,int stack)
         {
             printf("Enter the item you want to insert\n");
             scanf("%d",&item);
-            top_index_b--;
+            top_index_b--;  // stack b is inserted form the end of the array
             arr[top_index_b] = item;
             return item;
         }
