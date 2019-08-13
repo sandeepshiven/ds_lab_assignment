@@ -24,9 +24,7 @@ second_largest = arr2[-2]
 
 index_lar = arr.index(largest)
 index_sec = arr.index(second_largest)
-print(arr)
-print(index_lar)
-print(index_sec)
+
 
 if index_lar > index_sec:
     for i in range(index_sec,(index_lar+1)):
