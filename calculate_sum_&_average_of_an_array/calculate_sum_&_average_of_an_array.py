@@ -1,9 +1,5 @@
-size = int(input("Enter the number of elements : "))
-list1 = []
 print("Enter the elements")
-for i in range(size):
-    num = int(input())
-    list1.append(num)
-    
+list1 = list(map(int, input().split()))
 print("Sum: " , sum(list1))
-print("Average: ",(sum(list1)/size))
+print("Average: ",(sum(list1)/len(list1)))
+
